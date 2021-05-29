@@ -10,8 +10,9 @@ jobs:
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: Create local changes
       run: |
-        echo "1234" > test.txt
-        git commit -m "Editing the README to try out git add/commit"
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git commit -m "Add changes" -a
     - name: Commit & Push changes
       uses: actions-js/push@master
       with:
